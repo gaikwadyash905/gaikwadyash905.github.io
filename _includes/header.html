@@ -1,0 +1,52 @@
+<header class="site-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="/">
+                    <span class="name">Yash Gaikwad</span>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+                    <li><a href="/about" {% if page.url == "/about/" %}class="active"{% endif %}>About</a></li>
+                    <li><a href="/services" {% if page.url == "/services/" %}class="active"{% endif %}>Services</a></li>
+                    <li><a href="/portfolio" {% if page.url == "/portfolio/" %}class="active"{% endif %}>Portfolio</a></li>
+                    <li><a href="/writing" {% if page.url contains "/writing/" or page.url contains "/blog/" %}class="active"{% endif %}>Writing</a></li>
+                    <li><a href="/research" {% if page.url == "/research/" %}class="active"{% endif %}>Research</a></li>
+                    <li><a href="/contact" {% if page.url == "/contact/" %}class="active"{% endif %}>Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            
+            <div class="mobile-menu-toggle">
+                <button id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu">
+    <nav>
+        <ul>
+            <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li>
+            <li><a href="/about" {% if page.url == "/about/" %}class="active"{% endif %}>About</a></li>
+            <li><a href="/services" {% if page.url == "/services/" %}class="active"{% endif %}>Services</a></li>
+            <li><a href="/portfolio" {% if page.url == "/portfolio/" %}class="active"{% endif %}>Portfolio</a></li>
+            <li><a href="/writing" {% if page.url contains "/writing/" or page.url contains "/blog/" %}class="active"{% endif %}>Writing</a></li>
+            <li><a href="/research" {% if page.url == "/research/" %}class="active"{% endif %}>Research</a></li>
+            <li><a href="/contact" {% if page.url == "/contact/" %}class="active"{% endif %}>Contact</a></li>
+        </ul>
+    </nav>
+</div>

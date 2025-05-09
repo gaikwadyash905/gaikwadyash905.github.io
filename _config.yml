@@ -1,0 +1,74 @@
+title: Yash Gaikwad
+email: your-email@example.com
+description: >-
+  Yash Gaikwad - Freelancer | Writer | Technologist. Personal portfolio and blog.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://gaikwadyash905.me" # the base hostname & protocol for your site
+twitter_username: yourtwitterhandle
+github_username:  yourgithubhandle
+linkedin_username: yourlinkedinhandle
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:title/
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# SEO settings
+author: Yash Gaikwad
+twitter:
+  username: yourtwitterhandle
+  card: summary_large_image
+social:
+  name: Yash Gaikwad
+  links:
+    - https://twitter.com/yourtwitterhandle
+    - https://www.linkedin.com/in/yourlinkedinhandle
+    - https://github.com/yourgithubhandle
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+  research:
+    output: true
+    permalink: /research/:path/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Yash Gaikwad"
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
+  - scope:
+      path: ""
+      type: "research"
+    values:
+      layout: "research"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

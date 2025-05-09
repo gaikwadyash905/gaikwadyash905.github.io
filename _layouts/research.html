@@ -1,0 +1,64 @@
+---
+layout: default
+---
+<div class="research-paper">
+    <header class="research-header">
+        <h1 class="research-title">{{ page.title }}</h1>
+        {% if page.tags %}
+        <div class="research-tags">
+            {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </header>
+    
+    <div class="research-content">
+        {% if page.abstract %}
+        <div class="research-abstract">
+            <h2>Abstract</h2>
+            <p>{{ page.abstract }}</p>
+        </div>
+        {% endif %}
+        
+        <div class="research-details">
+            {% if page.authors %}
+            <div class="detail">
+                <strong>Authors:</strong> {{ page.authors }}
+            </div>
+            {% endif %}
+            
+            {% if page.publication %}
+            <div class="detail">
+                <strong>Publication:</strong> {{ page.publication }}
+            </div>
+            {% endif %}
+            
+            {% if page.date %}
+            <div class="detail">
+                <strong>Date:</strong> {{ page.date | date: "%B %Y" }}
+            </div>
+            {% endif %}
+            
+            {% if page.pdf %}
+            <div class="detail">
+                <strong>PDF:</strong> <a href="{{ page.pdf }}" target="_blank">Download PDF</a>
+            </div>
+            {% endif %}
+            
+            {% if page.external_link %}
+            <div class="detail">
+                <strong>External Link:</strong> <a href="{{ page.external_link }}" target="_blank">View Paper</a>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="research-body">
+            {{ content }}
+        </div>
+    </div>
+    
+    <div class="research-navigation">
+        <a href="/research" class="back-button">&laquo; Back to Research Papers</a>
+    </div>
+</div>

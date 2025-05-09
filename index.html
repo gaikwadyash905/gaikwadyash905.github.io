@@ -1,0 +1,163 @@
+---
+layout: default
+title: Home
+description: Yash Gaikwad - Freelancer, Writer, and Technologist. Personal portfolio and blog.
+---
+
+<section class="hero" data-aos="fade-up">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlight">Yash Gaikwad</span></h1>
+                <h2>Freelancer | Writer | Technologist</h2>
+                <p>I help businesses and individuals bring their ideas to life through technology and creative solutions.</p>
+                <div class="hero-buttons">
+                    <a href="/contact" class="btn">Hire Me</a>
+                    <a href="/portfolio" class="btn btn-outline">See Projects</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="/assets/images/profile-placeholder.jpg" alt="Yash Gaikwad">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-preview" data-aos="fade-up">
+    <div class="container">
+        <div class="section-header">
+            <h2>About Me</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="about-content">
+            <p>I'm a passionate technologist with expertise in web development, automation, and technical writing. With a background in computer science, I help clients solve complex problems through innovative solutions.</p>
+            <a href="/about" class="btn btn-outline">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<section class="services-preview" data-aos="fade-up">
+    <div class="container">
+        <div class="section-header">
+            <h2>Services</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Web Development</h3>
+                <p>Custom websites and web applications built with modern technologies.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h3>Automation</h3>
+                <p>Streamline your workflows with custom automation solutions.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+                <h3>Technical Writing</h3>
+                <p>Clear and concise documentation, articles, and tutorials.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Data Analysis</h3>
+                <p>Extract insights from your data with custom analysis solutions.</p>
+            </div>
+        </div>
+        <div class="services-cta">
+            <a href="/services" class="btn">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio-preview" data-aos="fade-up">
+    <div class="container">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="portfolio-grid">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="/assets/images/project-placeholder-1.jpg" alt="Project 1">
+                </div>
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Short description of the project goes here.</p>
+                    <a href="/projects/project-1" class="btn btn-sm">View Project</a>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="/assets/images/project-placeholder-2.jpg" alt="Project 2">
+                </div>
+                <div class="project-info">
+                    <h3>Project Title 2</h3>
+                    <p>Short description of the project goes here.</p>
+                    <a href="/projects/project-2" class="btn btn-sm">View Project</a>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="project-image">
+                    <img src="/assets/images/project-placeholder-3.jpg" alt="Project 3">
+                </div>
+                <div class="project-info">
+                    <h3>Project Title 3</h3>
+                    <p>Short description of the project goes here.</p>
+                    <a href="/projects/project-3" class="btn btn-sm">View Project</a>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-cta">
+            <a href="/portfolio" class="btn">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+<section class="blog-preview" data-aos="fade-up">
+    <div class="container">
+        <div class="section-header">
+            <h2>Latest Articles</h2>
+            <div class="section-divider"></div>
+        </div>
+        <div class="blog-grid">
+            {% for post in site.posts limit:3 %}
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="{{ forloop.index | times: 100 }}">
+                <div class="blog-info">
+                    <div class="blog-meta">
+                        <span class="date">{{ post.date | date: "%B %-d, %Y" }}</span>
+                    </div>
+                    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+                    <p>{{ post.description | truncate: 120 }}</p>
+                    <a href="{{ post.url }}" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="blog-cta">
+            <a href="/writing" class="btn">View All Articles</a>
+        </div>
+    </div>
+</section>
+
+<section class="contact-preview" data-aos="fade-up">
+    <div class="container">
+        <div class="contact-content">
+            <div class="contact-text">
+                <h2>Let's Work Together</h2>
+                <p>Have a project in mind? Get in touch and let's create something amazing together.</p>
+            </div>
+            <div class="contact-button">
+                <a href="/contact" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </div>
+</section>

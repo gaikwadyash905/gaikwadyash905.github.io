@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<div class="project">
+    <header class="project-header">
+        <h1 class="project-title">{{ page.title }}</h1>
+        {% if page.tags %}
+        <div class="project-tags">
+            {% for tag in page.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </header>
+    
+    <div class="project-content">
+        {% if page.image %}
+        <div class="project-image">
+            <img src="{{ page.image }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+        
+        <div class="project-details">
+            {% if page.client %}
+            <div class="detail">
+                <strong>Client:</strong> {{ page.client }}
+            </div>
+            {% endif %}
+            
+            {% if page.date %}
+            <div class="detail">
+                <strong>Date:</strong> {{ page.date | date: "%B %Y" }}
+            </div>
+            {% endif %}
+            
+            {% if page.role %}
+            <div class="detail">
+                <strong>Role:</strong> {{ page.role }}
+            </div>
+            {% endif %}
+            
+            {% if page.website %}
+            <div class="detail">
+                <strong>Website:</strong> <a href="{{ page.website }}" target="_blank">{{ page.website }}</a>
+            </div>
+            {% endif %}
+            
+            {% if page.github %}
+            <div class="detail">
+                <strong>GitHub:</strong> <a href="{{ page.github }}" target="_blank">{{ page.github }}</a>
+            </div>
+            {% endif %}
+        </div>
+        
+        <div class="project-description">
+            {{ content }}
+        </div>
+    </div>
+    
+    <div class="project-navigation">
+        <a href="/portfolio" class="back-button">&laquo; Back to Portfolio</a>
+    </div>
+</div>
